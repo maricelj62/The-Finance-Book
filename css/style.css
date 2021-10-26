@@ -1,0 +1,446 @@
+/*--------------------------------
+# Estilos generales
+---------------------------------*/
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+h1, h2 {
+    margin: 0 2vw 5vh 2vw;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+input {
+    margin: 2vh 0 2vh 0;
+}
+
+.textEntryContainer__entry, .debtForm__entry {
+    border-color: rgb(223, 223, 223);
+    border-radius: 4px;
+    height: 5vh;
+}
+
+.btnContainer__movBtn, .debtForm__btn {
+    color: #ede0f5;
+    height: 6vh;
+    border-radius: 16px;
+    font-weight: 600;
+}
+
+
+/*--------------------------------
+# Barra superior
+---------------------------------*/
+.navContainer__logo, .footerSection__logo {
+    font-family: 'Gluten', cursive;
+}
+
+.navElement__anchor {
+    color: rgb(216, 214, 214) !important;
+    font-size: 0.9rem;
+}
+
+.navElement__anchor:hover {
+    color: white !important;
+}
+
+
+/*--------------------------------
+# Sección de bienvenida
+---------------------------------*/
+.welcomeContainer {
+    background-image: url("../img/laptop-1209008.jpg");
+    background-size: cover;
+    height: 95vh;
+    padding: 0 0 0 0;
+    margin-bottom: 5vh;
+}
+
+
+/*--------------------------------
+# Sección formulario movimientos
+---------------------------------*/
+.movementsContainer {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movementsContainer__insideContainer {
+    border: 2px solid #573c69;
+    background-color: #f7f2f2;
+    padding: 10vh 10vw 10vh 10vw;
+    border-radius: 3rem;
+}
+
+.movementsForm__textEntryContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.movementsForm__boxEntryContainer {
+    text-align: center;
+    padding-top: 1vh;
+}
+
+.boxEntryContainer__checkInput {
+    margin-left: 1vw;
+    margin-top: 4vh;
+}
+
+.boxEntryContainer__textInput {
+    margin-right: 1vw;
+}
+
+.movementsForm__btnContainer {
+    margin-top: 4vh;
+    display: flex;
+}
+
+.btnContainer__movBtn {
+    background-color: #3e2750;
+    border:  1px solid #905eb0;
+}
+
+.btnContainer__movBtn:hover {
+    background-color: #55346d;
+}
+
+
+/*--------------------------------
+# Sección mostrar movimientos
+---------------------------------*/
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #faf8f8;
+    box-shadow: 0px 0px 20px rgba(10, 4, 60, 0.3);
+    min-height: 85vh;
+}
+
+.resultsContainer__movementsCard {
+    margin: 0 2vw 0 2vw;
+    padding: 2vh 2vw 2vh 2vw;
+    background-color: #f7f2f2;
+    width: 60vw;
+    display: flex;
+}
+
+.firstMovementsCard {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-top: 1px solid rgba(10, 4, 60, 0.1);
+    border-left: 1px solid rgba(10, 4, 60, 0.1);
+    border-right: 1px solid rgba(10, 4, 60, 0.1);
+}
+
+.middleMovementsCard {
+    border-left: 1px solid rgba(10, 4, 60, 0.1);
+    border-right: 1px solid rgba(10, 4, 60, 0.1);
+}
+
+.lastMovementsCard {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom: 1px solid rgba(10, 4, 60, 0.1);
+}
+
+.movementsCard__parrValue {
+    font-weight: 600;
+}
+
+.expenseAlert {
+    color: red;
+}
+
+.resultsContainer__resultsCard {
+    margin: 3vh 2vw 0 2vw;
+    padding: 2.5vh;
+    background-color: #573c69;
+    color: white;
+    width: 60vw;
+    display: flex;
+}
+
+
+/*--------------------------------
+# Sección endeudamiento
+---------------------------------*/
+.debtContainer {
+    padding: 15vh 5vh 15vh 5vh;
+    margin-top: 5vh;
+    background-color: #001420;
+    display: flex;
+    justify-content: center;
+}
+
+.debtContainer__debtFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #af4e7a;
+    padding-bottom: 10vh;
+    width: 60%;
+}
+
+.debtFormContainer__title {
+    color: rgb(216, 214, 214);
+    font-size: 2.5rem;
+}
+
+.debtFormContainer__debtForm {
+    display: flex;
+}
+
+.debtForm__btn {
+    border: #e5643e;
+    color: rgb(216, 214, 214);
+    background-color: #af4e7a;
+}
+
+.debtForm__btn:hover {
+    background-color: #d870a0;
+}
+
+.insideDivision__parr {
+    text-align: center;
+    margin-bottom: 1vh;
+    margin-top: 3vh;
+    display: none;
+    font-size: 1.2rem;
+    color: rgb(216, 214, 214);
+}
+
+.debtFormContainer__image {
+    margin-top: 5vh;
+    border: 1px solid rgb(216, 214, 214);
+}
+
+
+/*--------------------------------
+# Sección tasas
+---------------------------------*/
+.rateContainer {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.rateContainer__btn {
+    height: 10vh;
+    background-color: #3e2750;
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 4vh;
+}
+
+.rateContainer__btn:hover {
+    background-color: #55346d;
+}
+
+.rateContainer__rateInner {
+    background-color: #f7f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 0 3vw 0 3vw;
+}
+
+.rateInner__headContainer {
+    border-bottom: 2px solid rgb(179, 177, 177);
+    margin: 3vh 0 2vh 0;
+    padding: 0.5vh;
+    width: 35%;
+    text-align: center;
+}
+
+.rateInner__listContainer {
+    text-align: center;
+}
+
+.lastParrMargin {
+    margin-bottom: 3vh;
+}
+
+
+/*--------------------------------
+# Footer
+---------------------------------*/
+.footerSection {
+    height: 45vh;
+    color: white;
+    background-color: #001420;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.footerSection__logo {
+    margin: 0 3vw 0 3vw;
+}
+
+
+/*-----------------------
+# Media Queries   
+-------------------------*/
+@media only screen and (max-width:600px) {
+
+    /* Estilos generales */
+    :root {
+        font-size: 14px;
+    }
+
+    .btnContainer__movBtn, .debtForm__btn {
+        width: 30vw;
+    }
+    /* Fin estilos generales */
+
+    /* Formulario movimientos */
+    .movementsContainer {
+        padding: 10vh 5vw 10vh 5vw;
+        margin: 10vh 5vh 10vh 5vh;
+    }
+
+    .movementsForm__btnContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Fin formulario movimientos */
+
+    /* Mostrar movimientos */
+    .resultsContainer {
+        padding: 5vh 2vh 5vh 2vh;
+        margin: 10vh 5vh 10vh 5vh;
+    }
+
+    .resultsContainer__movementsCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resultsContainer__resultsCard {
+        flex-direction: column;
+        border-radius: 16px;
+        text-align: center;
+    }
+    /* Fin mostrar movimientos */
+
+    /* Endeudamiento */
+    .debtFormContainer__debtForm {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .debtFormContainer__image {
+        width: 98%;
+    }
+    /* Fin endeudamiento */
+
+    /* Tasas */
+    .rateContainer__btn, .rateContainer__rateInner {
+        width: 70vw;
+    }
+    /* Fin tasas */
+}
+
+@media only screen and (min-width:600px) {
+
+    /* Estilos generales */
+    :root {
+        font-size: 16px;
+    }
+
+    .btnContainer__movBtn, .debtForm__btn {
+        width: 8vw;
+    }
+    /* Fin estilos generales */
+
+    /*-- Formulario movimientos --*/
+    .movementsContainer {
+        padding: 10vh 10vw 10vh 10vw;
+    }
+
+    .movementsForm__btnContainer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /*-- Fin formulario movimientos --*/
+
+    /* Mostrar movimientos */
+    .resultsContainer__movementsCard {
+        justify-content: space-between;
+    }
+
+    .movementsCard__parrDescription {
+        width: 70%;
+    }
+
+    .resultsContainer {
+        padding: 10vh;
+        margin: 10vh 5vh 10vh 5vh;
+    }
+
+    .resultsContainer__resultsCard {
+        justify-content: space-around;
+        border-radius: 8px;
+    }
+    /* Fin mostrar movimientos */
+
+    /* Endeudamiento */
+    .debtContainer__debtFormContainer {
+        border-left: 1px dotted #d686ab;
+    }
+
+    .debtFormContainer__debtForm {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .debtForm__entry, .debtForm__btn {
+        margin: 5vh 2vw 5vh 2vw;
+    }
+
+    .debtForm__entry {
+        width: 15vw;
+    }
+    
+    .debtFormContainer__image {
+        width: 80%;
+    }
+    /* Fin endeudamiento */
+
+    /* Tasas */
+    .rateContainer__btn, .rateContainer__rateInner {
+        width: 40vw;
+    }
+    /* Fin tasas */
+}
