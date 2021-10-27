@@ -1,4 +1,4 @@
-/*Función para resetar formulario*/
+/* Función para resetar formulario */
 const rstForm = (form) => {
     for (elements of  form) {
         elements.reset();
@@ -9,6 +9,10 @@ const rstForm = (form) => {
 /*--------------------------------
 # Sección registro de movimientos
 ---------------------------------*/
+
+/* Cuando se presiona el botón "Enviar" se activa esta función, la cual  
+crea el objeto "item" a partir de los datos del movimiento ingresado
+por el usuario. Luego, el objeto "item" se envía a la función "saveData". */
 const sendMovData = (e) => {
     e.preventDefault();
     let description = $("#entryDescription").val();
@@ -27,6 +31,10 @@ const sendMovData = (e) => {
     saveData(item);
 }
 
+/* Esta función recibe el objeto "item" y crea el array "movements", en 
+el cual se adiciona el objeto con los datos del movimiento. 
+Finalmente, el array es enviado a local storage.
+ */
 const saveData = (item) => {
     let movements = JSON.parse(localStorage.getItem("Movements"));
 
@@ -37,16 +45,23 @@ const saveData = (item) => {
     localStorage.setItem("Movements", JSON.stringify(movements));
 }
 
+/* Esta función se activa cuando se presiona el botón "Resetar". 
+Primero limpia los campos del formulario, luego borra el local
+storage y por último esconde la sección donde se muestran
+los resultados de los movimientos. */
 const clearMovements = () => {
     rstForm($("#movementsForm"));
     localStorage.clear();
     $("#resultsDivision").hide();
 }
 
+/* Esta función se activa con el botón "Mostrar", y lo que hace
+es mostrar una sección donde el usuario puede ver el detalle de los
+movimientos registrados. */
 const showMovements = () => {
     let movements = JSON.parse(localStorage.getItem("Movements"));
 
-    //Crea la sección donde se mostrarán los resultados
+    // Muestra la sección de resultados y dirige el scroll hacia ella.
     let resultsSection = $("#resultsDivision");
     resultsSection.text("");
     resultsSection.show();
@@ -54,6 +69,7 @@ const showMovements = () => {
         scrollTop: $("#resultsDivision").offset().top
     }, 100);
 
+    // Agrega estilos y tílulo a la sección de resultados
     resultsSection.addClass("resultsContainer");
 
     if (!movements) {
@@ -63,7 +79,10 @@ const showMovements = () => {
         let totalIncome = 0;
         let totalExpense = 0;
         
-        //Para cada elemento del array, crea un card con 3 párrafos que contienen los valores
+        /* Para cada elemento del array donde se almacenan los movimientos,
+        crea un card con la descripción y el valor del movimiento. Luego,
+        agrega estilos al card dependiendo de su posición. Si el movimiento 
+        corresponde a un gasto, agrega también un estilo particular. */
         movements.forEach( (element, i) => {
             let movementsCard = `<div class="resultsContainer__movementsCard">
                                     <p class="movementsCard__parrDescription" >${element.description}</p>
@@ -89,7 +108,7 @@ const showMovements = () => {
         
         $( ".resultsContainer__movementsCard:last" ).addClass("lastMovementsCard");
        
-        //Se crea card para mostrar los resultados de saldo total
+        //Se crea un card para mostrar los resultados de saldo total
         let resultsCard = `<div class="resultsContainer__resultsCard">
                                 <p><b>Total ingresos:</b> $ ${totalIncome}</p>
                                 <p><b>Total gastos:</b> $ ${totalExpense}</p>
@@ -108,11 +127,16 @@ const showMovements = () => {
 /*--------------------------------
 # Sección endeudamiento
 ---------------------------------*/
+
+/* Esta función calcula la capacidad de endeudamiento y se activa con el botón "Calcular". */
 const debtCalculate = (e) => {
     e.preventDefault();
 
     $("#resultsDebtContainer").text("");
     
+    /* Si los campos del formulario son diligenciados, se calcula la capacidad de endeudamiento.
+    Este valor se mostrará en un párrafo que se crea inicialmente con la propiedad "display: none", 
+    y que luego se muestra por medio de una animación que se aplica también a la imagen. */
     if ($("#entryIncome").val() && $("#entryExpense").val()) {
         let result = (parseFloat($("#entryIncome").val()) - parseFloat($("#entryExpense").val()))*0.40;
         $("#resultsDebtContainer").append(`<p class = 'insideDivision__parr' >Su capacidad de endeudamiento es $ ${result}</p>`);
@@ -120,9 +144,11 @@ const debtCalculate = (e) => {
         $("#debtImage").fadeOut( function () {
             $(".insideDivision__parr").fadeIn(2000);
             $("#debtImage").fadeIn(2000);
-        })
-    
-    } else {
+        }) 
+    } 
+    /* Si los dos campos del formulario no son diligenciados, se muestra solo el párrafo, solicitando 
+    ingresar los datos. */
+    else {
         $("#resultsDebtContainer").append(`<p class = 'insideDivision__parr' >Por favor digilencie el formulario</p>`);
         $(".insideDivision__parr").show();
         $("#debtImage").hide();
@@ -141,6 +167,7 @@ const debtCalculate = (e) => {
 ---------------------------------*/
 const APIURL = "https://api.vatcomply.com/rates?base=USD";
 
+/* Esta función realiza una llamada AJAX para consultar datos de tasas de referencia. */
 function rateData() {
     $.ajax({
         method: "GET",

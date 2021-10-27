@@ -220,10 +220,10 @@ input {
 }
 
 .insideDivision__parr {
+    display: none;
     text-align: center;
     margin-bottom: 1vh;
     margin-top: 3vh;
-    display: none;
     font-size: 1.2rem;
     color: rgb(216, 214, 214);
 }
@@ -384,7 +384,7 @@ input {
     }
     /* Fin estilos generales */
 
-    /*-- Formulario movimientos --*/
+    /* Formulario movimientos */
     .movementsContainer {
         padding: 10vh 10vw 10vh 10vw;
     }
@@ -393,7 +393,7 @@ input {
         flex-direction: row;
         justify-content: space-around;
     }
-    /*-- Fin formulario movimientos --*/
+    /* Fin formulario movimientos */
 
     /* Mostrar movimientos */
     .resultsContainer__movementsCard {

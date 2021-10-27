@@ -1,3 +1,4 @@
+/* Constructor para los datos ingresados en la sección "Registro de Movimientos" */
 class Movement {
     constructor(description, value, type) {
         this.description = description;
@@ -6,6 +7,7 @@ class Movement {
     }
 }
 
+/* Llamado a funciones para los botones de las secciones movimientos, endeudamiento y tasas */
 $(document).ready( function() {
     $("#movementsForm").submit(sendMovData);
     $("#resetMovBtn").click(clearMovements);
