@@ -66,7 +66,6 @@ input {
 .welcomeContainer {
     background-image: url("../img/laptop-1209008.jpg");
     background-size: cover;
-    height: 95vh;
     padding: 0 0 0 0;
     margin-bottom: 5vh;
 }
@@ -324,6 +323,12 @@ input {
     }
     /* Fin estilos generales */
 
+    /* Sección de bienvenida*/
+    .welcomeContainer {
+        height: 35vh;
+    }
+    /* Fin sección de bienvenida*/
+
     /* Formulario movimientos */
     .movementsContainer {
         padding: 10vh 5vw 10vh 5vw;
@@ -384,6 +389,12 @@ input {
     }
     /* Fin estilos generales */
 
+    /* Sección de bienvenida*/
+    .welcomeContainer {
+        height: 45vh;
+    }
+    /* Fin sección de bienvenida*/
+
     /* Formulario movimientos */
     .movementsContainer {
         padding: 10vh 10vw 10vh 10vw;
@@ -443,4 +454,31 @@ input {
         width: 40vw;
     }
     /* Fin tasas */
+}
+
+@media only screen and (min-width:992px) {
+    
+    /* Sección de bienvenida*/
+    .welcomeContainer {
+        height: 60vh;
+    }
+    /* Fin sección de bienvenida*/
+}
+
+@media only screen and (min-width:1200px) {
+    
+    /* Sección de bienvenida*/
+    .welcomeContainer {
+        height: 70vh;
+    }
+    /* Fin sección de bienvenida*/
+}
+
+@media only screen and (min-width:1400px) {
+    
+    /* Sección de bienvenida*/
+    .welcomeContainer {
+        height: 95vh;
+    }
+    /* Fin sección de bienvenida*/
 }
